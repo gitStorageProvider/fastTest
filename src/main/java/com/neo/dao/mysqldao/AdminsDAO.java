@@ -1,6 +1,7 @@
 package com.neo.dao.mysqldao;
 
 import com.neo.beans.Admin;
+import com.neo.dao.connection.WrappedConnection;
 import com.neo.dao.idao.IAdminsDAO;
 
 import java.sql.PreparedStatement;
@@ -19,9 +20,9 @@ public class AdminsDAO implements IAdminsDAO {
     public static final String SQL_UPDATE_ADMIN = "UPDATE " + ADMINS_TABLE_NAME + " SET name = ?, password = ?, WHERE id = ?";
     public static final String SQL_DELETE_ADMIN_BY_ID = "DELETE FROM " + ADMINS_TABLE_NAME + " WHERE id = ?";
 
-    private WrappedConnector wrappedConnector;
+    private WrappedConnection wrappedConnector;
 
-    public AdminsDAO(WrappedConnector wrappedConnector) {
+    public AdminsDAO(WrappedConnection wrappedConnector) {
 //        Соединение с базой данных инициирует конструктор DAO, либо получает
 //        его из пула. В методе остаются возможности по созданию экземпляра Statement
 //        для выполнения запросов и его закрытию. В данной реализации использовался
@@ -35,7 +36,7 @@ public class AdminsDAO implements IAdminsDAO {
     @Override
     public List<Admin> findAll() {
         List<Admin> admins = new ArrayList<>();
-        try (/*Connection cn = ConnectionPool.getConnection();*/ Statement st = /*cn.createStatement()*/ wrappedConnector.getStatement()) {
+        try (/*Connection cn = ConnectionPool.getConnection();*/ Statement st = /*cn.createStatement()*/ wrappedConnector.createStatement()) {
             ResultSet rs = st.executeQuery(SQL_SELECT_ALL_ADMINS);
             while (rs.next()) {
                 admins.add(new Admin(rs.getInt("id"),

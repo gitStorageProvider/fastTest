@@ -1,7 +1,8 @@
 package com.neo.dao.mysqldao;
 
-import com.kuriata.interjacentProject.idao.IStudentsDAO;
-import com.kuriata.interjacentProject.models.Student;
+import com.neo.beans.Student;
+import com.neo.dao.connection.WrappedConnection;
+import com.neo.dao.idao.IStudentsDAO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentsDAO implements IStudentsDAO {
-    private WrappedConnector wrappedConnector;
+    private WrappedConnection wrappedConnector;
 
     public static final String STUDENTS_TABLE_NAME = "students";
     public static final String SQL_FIND_ALL_STUDENTS = "SELECT * FROM " + STUDENTS_TABLE_NAME;
@@ -23,14 +24,14 @@ public class StudentsDAO implements IStudentsDAO {
     public static final String SQL_UPDATE_STUDENT = "UPDATE " + STUDENTS_TABLE_NAME + " SET firstName = ?, lastName = ?, email = ?, rating = ? WHERE id = ?";
     public static final String SQL_DELETE_STUDENT_BY_ID = "DELETE FROM " + STUDENTS_TABLE_NAME + " WHERE id = ?";
 
-    public StudentsDAO(WrappedConnector wrappedConnector) {
+    public StudentsDAO(WrappedConnection wrappedConnector) {
         this.wrappedConnector = wrappedConnector;
     }
 
     @Override
     public List<Student> findAll() {
         List<Student> students = new ArrayList<>();
-        try (/*Connection cn = ConnectionPool.getConnection(); */Statement st = /*cn.createStatement()*/ wrappedConnector.getStatement()) {
+        try (/*Connection cn = ConnectionPool.getConnection(); */Statement st = /*cn.createStatement()*/ wrappedConnector.createStatement()) {
             ResultSet rs = st.executeQuery(SQL_FIND_ALL_STUDENTS);
             while (rs.next()) {
                 students.add(new Student(rs.getInt("id"),

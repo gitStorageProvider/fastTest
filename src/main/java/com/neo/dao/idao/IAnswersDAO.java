@@ -1,6 +1,6 @@
 package com.neo.dao.idao;
 
-import com.kuriata.interjacentProject.models.Answer;
+import com.neo.beans.Answer;
 
-public interface IAnswersDAO extends IDAO<Answer>{
+public interface IAnswersDAO extends IDAO<Answer> {
 }

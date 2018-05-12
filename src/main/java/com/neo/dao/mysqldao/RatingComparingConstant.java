@@ -1,4 +1,4 @@
-package com.kuriata.interjacentProject.MySQLdao;
+package com.neo.dao.mysqldao;
 
 public enum RatingComparingConstant {
     RATING_EQUAL_TO(" = ?"),
