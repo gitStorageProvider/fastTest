@@ -1,30 +1,33 @@
 package com.neo.dao.daofactory;
 
-import com.neo.idao;
+import com.neo.dao.connection.WrappedConnection;
+import com.neo.dao.idao.*;
+import com.neo.dao.mysqldao.*;
 
-public class MySQLDAOFactory implements AbstractDAOFactory {
+public class MySQLDAOFactory implements IDAOFactory {
     @Override
-    public IAdminsDAO createAdminsDAO(WrappedConnector wrappedConnector) {
+    public IAdminsDAO getAdminsDAO(WrappedConnection wrappedConnector) {
         return new AdminsDAO(wrappedConnector);
     }
 
     @Override
-    public IStudentsDAO createStudentsDAO(WrappedConnector wrappedConnector) {
-        return new StudentsDAO(wrappedConnector);
+    public IStudentsDAO getStudentsDAO(WrappedConnection wrappedConnection) {
+        return new StudentsDAO(wrappedConnection);
     }
 
     @Override
-    public IQuestionsDAO createQuestionsDAO(WrappedConnector wrappedConnector) {
-        return new QuestionsDAO(wrappedConnector);
+    public IQuestionsDAO getQuestionsDAO(WrappedConnection wrappedConnection) {
+        return new QuestionsDAO(wrappedConnection);
     }
 
     @Override
-    public IAnswersDAO createAnswersDAO(WrappedConnector wrappedConnector) {
-        return new AnswersDAO(wrappedConnector);
+    public IAnswersDAO getAnswersDAO(WrappedConnection wrappedConnection) {
+        return new AnswersDAO(wrappedConnection);
     }
 
     @Override
-    public ICompleteTestsDAO createCompleteTestsDAO(WrappedConnector wrappedConnector) {
-        return null;
+    public ICompleteTestsDAO getCompleteTestsDAO(WrappedConnection wrappedConnection) {
+        //ToDo: change method
+        throw new UnsupportedOperationException();
     }
 }

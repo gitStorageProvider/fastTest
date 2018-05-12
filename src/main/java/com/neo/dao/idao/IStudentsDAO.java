@@ -1,6 +1,7 @@
 package com.neo.dao.idao;
 
 import com.neo.beans.Student;
+import com.neo.dao.mysqldao.RatingComparingConstant;
 
 import java.util.List;
 

@@ -1,8 +1,6 @@
 package com.neo.dao.idao;
 
-import com.kuriata.interjacentProject.models.Test;
-
-import java.util.List;
+import com.neo.beans.Test;
 
 public interface ICompleteTestsDAO extends IDAO<Test>{
 }
