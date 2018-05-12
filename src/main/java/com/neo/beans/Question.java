@@ -5,7 +5,6 @@ import java.io.Serializable;
 public class Question extends BaseEntity {
     private int id;
     private String title;
-    private String imagePath;
     private String text;
     private String item1;
     private String item2;
@@ -15,10 +14,9 @@ public class Question extends BaseEntity {
     public Question() {
     }
 
-    public Question(int id, String title, String imagePath, String text, String item1, String item2, String item3, String item4) {
+    public Question(int id, String title, String text, String item1, String item2, String item3, String item4) {
         this.id = id;
         this.title = title;
-        this.imagePath = imagePath;
         this.text = text;
         this.item1 = item1;
         this.item2 = item2;
@@ -40,14 +38,6 @@ public class Question extends BaseEntity {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
     }
 
     public String getText() {

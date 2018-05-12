@@ -1,8 +1,6 @@
-package com.kuriata.interjacentProject.idao;
+package com.neo.dao.idao;
 
-import com.kuriata.interjacentProject.models.Question;
-
+import com.neo.beans.Question;
 
 public interface IQuestionsDAO extends IDAO<Question>{
-
 }
