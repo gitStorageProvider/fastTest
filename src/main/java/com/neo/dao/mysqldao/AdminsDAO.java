@@ -17,7 +17,7 @@ public class AdminsDAO implements IAdminsDAO {
     public static final String SQL_SELECT_ADMIN_BY_ID = "SELECT * FROM " + ADMINS_TABLE_NAME + " WHERE id = ?";
     public static final String SQL_SELECT_ADMIN_BY_NAME_AND_PASSWORD = "SELECT * FROM " + ADMINS_TABLE_NAME + " WHERE name = ?, password = ?";
     public static final String SQL_INSERT_ADMIN = "INSERT INTO " + ADMINS_TABLE_NAME + " VALUES (?, ?, ?)";
-    public static final String SQL_UPDATE_ADMIN = "UPDATE " + ADMINS_TABLE_NAME + " SET name = ?, password = ?, WHERE id = ?";
+    public static final String SQL_UPDATE_ADMIN = "UPDATE " + ADMINS_TABLE_NAME + " SET name = ?, password = ? WHERE id = ?";
     public static final String SQL_DELETE_ADMIN_BY_ID = "DELETE FROM " + ADMINS_TABLE_NAME + " WHERE id = ?";
 
     private WrappedConnection wrappedConnector;
@@ -68,6 +68,7 @@ public class AdminsDAO implements IAdminsDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        //ToDO: change exception type to DAOException
         throw new IllegalStateException(String.format("Admin %s does not exists", id));
     }
 

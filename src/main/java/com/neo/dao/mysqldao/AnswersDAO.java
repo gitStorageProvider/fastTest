@@ -20,7 +20,7 @@ public class AnswersDAO implements IAnswersDAO {
     public static final String SQL_SELECT_ANSWER_BY_ID = "SELECT * FROM " + ANSWERS_TABLE_NAME + " WHERE id = ?";
     public static final String SQL_INSERT_ANSWER = "INSERT INTO " + ANSWERS_TABLE_NAME + "(item_1, item_2, item_3, item_4) VALUES (?, ?, ?, ?)";
 
-    public static final String SQL_UPDATE_ANSWER = "UPDATE " + ANSWERS_TABLE_NAME + " SET item_1 = ?, item_2 = ?, item_3 = ?, item_4 = ?, WHERE id = ?";
+    public static final String SQL_UPDATE_ANSWER = "UPDATE " + ANSWERS_TABLE_NAME + " SET item_1 = ?, item_2 = ?, item_3 = ?, item_4 = ? WHERE id = ?";
     public static final String SQL_DELETE_ANSWER_BY_ID = "DELETE FROM " + ANSWERS_TABLE_NAME + " WHERE id = ?";
 
     private WrappedConnection wrappedConnector;

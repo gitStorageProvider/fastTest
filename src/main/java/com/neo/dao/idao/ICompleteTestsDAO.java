@@ -1,6 +1,12 @@
 package com.neo.dao.idao;
 
-import com.neo.beans.Test;
+import com.neo.beans.CompleteTest;
+import com.neo.beans.Student;
 
-public interface ICompleteTestsDAO extends IDAO<Test>{
+import java.util.List;
+
+public interface ICompleteTestsDAO extends IDAO<CompleteTest> {
+    int getCompleteTestsCount();
+    List<CompleteTest> findAllPaginated(int pageNumber, int perPage);
+    void deleteAllCompletedTestsByStudent(Student student);
 }
