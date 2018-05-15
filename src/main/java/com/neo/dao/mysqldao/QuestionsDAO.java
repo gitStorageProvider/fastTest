@@ -18,7 +18,7 @@ public class QuestionsDAO implements IQuestionsDAO {
     public static final String SQL_SELECT_ALL_QIESTIONS = "SELECT * FROM " + QIESTIONS_TABLE_NAME;
     public static final String SQL_SELECT_QIESTION_BY_ID = "SELECT * FROM " + QIESTIONS_TABLE_NAME + " WHERE id = ?";
     public static final String SQL_INSERT_QIESTION = "INSERT INTO " + QIESTIONS_TABLE_NAME + " (title, imagePath, text, item_1, item_2, item_3, item_4) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    public static final String SQL_UPDATE_QIESTION = "UPDATE " + QIESTIONS_TABLE_NAME + " SET title = ?, text = ?, item1 = ?, item2 = ?, item3 = ?, item4 = ?, WHERE id = ?";
+    public static final String SQL_UPDATE_QIESTION = "UPDATE " + QIESTIONS_TABLE_NAME + " SET title = ?, text = ?, item1 = ?, item2 = ?, item3 = ?, item4 = ? WHERE id = ?";
     public static final String SQL_DELETE_QIESTION_BY_ID = "DELETE FROM " + QIESTIONS_TABLE_NAME + " WHERE id = ?";
 
     public QuestionsDAO(WrappedConnection wrappedConnector){

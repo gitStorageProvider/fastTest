@@ -3,7 +3,7 @@ package com.neo.beans;
 import java.sql.Date;
 
 public class CompleteTest extends BaseEntity {
-//    private int id;     <--inherited
+    private int studentId;
     private Date date;
     private double score;
     private boolean q1_id, q1_answ1,q1_answ2, q1_answ3, q1_answ4,
@@ -18,7 +18,7 @@ public class CompleteTest extends BaseEntity {
             q10_id, q10_answ1,q10_answ2, q10_answ3, q10_answ4;
 
     public CompleteTest(){}
-    public CompleteTest( int id, Date date, double score,
+    public CompleteTest( int studentId, Date date, double score,
                          boolean q1_id, boolean q1_answ1, boolean q1_answ2, boolean q1_answ3, boolean q1_answ4,
                          boolean q2_id, boolean q2_answ1, boolean q2_answ2, boolean q2_answ3, boolean q2_answ4,
                          boolean q3_id, boolean q3_answ1, boolean q3_answ2, boolean q3_answ3, boolean q3_answ4,
@@ -29,7 +29,7 @@ public class CompleteTest extends BaseEntity {
                          boolean  q8_id, boolean q8_answ1,boolean q8_answ2, boolean q8_answ3, boolean q8_answ4,
                          boolean q9_id, boolean q9_answ1, boolean q9_answ2, boolean q9_answ3, boolean q9_answ4,
                          boolean q10_id, boolean q10_answ1, boolean q10_answ2, boolean q10_answ3, boolean q10_answ4){
-        this.setId(id); this.date = date; this.score = score;
+        this.setId(studentId); this.date = date; this.score = score;
         this.q1_id = q1_id; this.q1_answ1 = q1_answ1; this.q1_answ2 = q1_answ2; this.q1_answ3 = q1_answ3; this.q1_answ4 = q1_answ4;
         this.q2_id = q2_id; this.q2_answ1 = q2_answ1; this.q2_answ2 = q2_answ2; this.q2_answ3 = q2_answ3; this.q2_answ4 = q2_answ4;
         this.q3_id = q3_id; this.q3_answ1 = q3_answ1; this.q3_answ2 = q3_answ2; this.q3_answ3 = q3_answ3; this.q3_answ4 = q3_answ4;
@@ -45,6 +45,7 @@ public class CompleteTest extends BaseEntity {
     @Override
     public String toString() {
         return "CompleteTest{" +
+                "studentId" + studentId +
                 "date=" + date +
                 ", score=" + score +
                 ", q1_id=" + q1_id +
