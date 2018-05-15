@@ -1,6 +1,6 @@
 package com.neo.dao.daofactory;
 
-import com.neo.Exceptions.DAOException;
+import com.neo.exceptions.DAOException;
 
 public abstract class AbstractDAOFactory {
     private static SupportedDatabases currentDatabase = SupportedDatabases.MYSQL;

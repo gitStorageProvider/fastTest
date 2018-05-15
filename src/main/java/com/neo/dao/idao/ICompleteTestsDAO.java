@@ -2,11 +2,16 @@ package com.neo.dao.idao;
 
 import com.neo.beans.CompleteTest;
 import com.neo.beans.Student;
+import com.neo.exceptions.DAOException;
 
 import java.util.List;
 
 public interface ICompleteTestsDAO extends IDAO<CompleteTest> {
-    int getCompleteTestsCount();
-    List<CompleteTest> findAllPaginated(int pageNumber, int perPage);
-    void deleteAllCompletedTestsByStudent(Student student);
+    int getCompleteTestsCount() throws DAOException;
+
+    List<CompleteTest> findAllPaginated(int pageNumber, int perPage) throws DAOException;
+
+    void deleteAllCompletedTestsByStudent(Student student) throws DAOException;
+
+    List<CompleteTest> findAllCompletedTestsByStudent(Student student) throws DAOException;
 }

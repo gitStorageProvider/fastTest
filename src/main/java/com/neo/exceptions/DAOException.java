@@ -1,4 +1,4 @@
-package com.neo.Exceptions;
+package com.neo.exceptions;
 
 import java.sql.SQLException;
 

@@ -1,6 +1,6 @@
 package com.neo.dao.daofactory;
 
-import com.neo.Exceptions.DAOException;
+import com.neo.exceptions.DAOException;
 import com.neo.dao.connection.WrappedConnection;
 import com.neo.dao.idao.*;
 
